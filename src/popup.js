@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const body = document.querySelector('body');
     
     let timer;
-    let time = 10; //Measured in seconds
+    let time = 1500; //Measured in seconds
     let timeleft = time
 
     function updateTimerDisplay() {
@@ -19,7 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function alarm(){
         audio.play();
-        audio.volume = .5
+        audio.volume = .1
+    
     }
 
     function stopAlarm(){
