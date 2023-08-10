@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Productivity Timer</title>
   <link rel="stylesheet" type="text/css" href="src/popup.css">
@@ -7,9 +8,17 @@
 </head>
 <body>
     <h1>Productivity Timer</h1>
-    <div id="timerDisplay">0:00</div>
+    <div id="timerDisplay">00:00</div>
+    <div id="breakMessage" style="display: none;">Time to take a break!</div>
     <button id="startButton">Start</button>
     <button id="resetButton">Reset</button>
+    <br>
+    <br>
+    <h1>Custom Time</h1>
+    <input type="text" id="startMinutes" value="25">
+    <br>
+    <button id="startMinutesButton">Set Minutes</button>
+    <br>
     <script src="./src/popup.js"></script>
 
 </body>

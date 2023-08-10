@@ -1,12 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
     const timerDisplay = document.getElementById('timerDisplay');
+    const breakMessage = document.getElementById('breakMessage')
     const startButton = document.getElementById('startButton');
     const resetButton = document.getElementById('resetButton');
+    const setMinutes = document.getElementById('startMinutesButton')
     const audio = new Audio('audio/Soft-alarm-tone.mp3')
     const body = document.querySelector('body');
     
     let timer;
-    const time = 10; //Measured in seconds
+    let time = 10; //Measured in seconds
     let timeleft = time
 
     function updateTimerDisplay() {
@@ -36,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     clearInterval(timer)
                     alarm()
                     timer = null
+                    breakMessage.style.display = 'block'
                 }   
             }, 1000)
         }
@@ -44,10 +47,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
     resetButton.addEventListener('click', function (){
         stopAlarm();
+        breakMessage.style.display = 'none';
         clearInterval(timer)
         timeleft = time
         timer = null
         updateTimerDisplay();
+    })
+
+    function parse(str){
+        let timeInput
+        let out
+        if(str.includes(':')){
+            timeInput = str.split(':')
+            timeInput[0] = parseInt(timeInput[0])
+            timeInput[1] = parseInt(timeInput[1])
+            out = (timeInput[0] * 60) + timeInput[1]
+
+        }else{
+            out = parseInt(str) * 60
+
+        }
+
+        return out
+    }
+
+    setMinutes.addEventListener('click', function (){
+        let input = document.getElementById('startMinutes').value
+        stopAlarm();
+        clearInterval(timer)
+        time = parse(input)
+        timeleft = time
+        timer = null
+        updateTimerDisplay()
     })
 
 });
