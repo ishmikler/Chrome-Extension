@@ -4,4 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     title.innerHTML = 'There is text here';
     body.appendChild(title);
 
+    
+
 });
