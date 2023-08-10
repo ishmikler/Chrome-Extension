@@ -1,0 +1,12 @@
+{
+    "manifest_version": 3,
+    "name": "Productivity Timer",
+    "version": "0.1",
+    "description": "A timer that tracks how long you have been working and reminds you to take a break",
+    "permissions": ["activeTab"],
+    "action": {
+        "default_title": "Productivity Timer",
+        "default_popup": "popup.html"
+
+    }
+}
