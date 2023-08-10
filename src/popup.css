@@ -1,0 +1,19 @@
+body {
+    width: 200px;
+    padding: 10px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+ #timerDisplay {
+    font-size: 16px;
+    margin-bottom: 10px;
+ }
+ 
+ button {
+    padding: 5px 10px;
+    margin: 0 5px;
+ }
